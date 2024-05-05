@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Creating Maps with Leaflet </title>
+
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css 
+integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js 
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" 
+crossorigin=""></script>
+
+
+</head>
+
+<body>
+
+<div id="map" style="height:600px"></div>
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+var greenIcon = L.icon({
+iconUrl: 'https://www.freeiconspng.com/thumbs/airplane-icon-png/plane-icon--awt-travel-blue-icons--softiconsm-17.png',
+iconSize: [30,30],
+iconAnchor: [45,45],
+popupAnchor: [0,-39],
+});
+
+L.marker ([13.753988754338225, 100.50652444232806],{icon:greenIcon}).addTo(map).bindPopup("<b> วัดสระเกศราชวรมหาวิหาร<br>แขวงบ้านบาตร เขตป้อมปราบศัตรูพ่าย กรุงเทพมหานคร<br>  <b>").openPopup();
+L.marker ([13.81176,100.55371],{icon:greenIcon}).addTo(map).bindPopup("<b> สวนวชิรเบศจทัศ<br>แขวงจตุจักร เขตจตุจักร กรุงเทพมหานคร<br> <b>").openPopup();
+L.marker ([13.81617,100.52898],{icon:greenIcon}).addTo(map).bindPopup("<b> วัดเวตวันธรรมาวาส<br>แขวงบางซื่อ เขตบางซื่อ กรุงเทพมหานคร<br> <b>").openPopup();
+L.marker ([13.76683,100.50290],{icon:greenIcon}).addTo(map).bindPopup("<b> วัดอินทรวิหาร<br>แขวงบางขุนพรหม เขตพระนคร กรุงเทพมหานคร<br><b>").openPopup();
+L.marker ([13.76954,100.50275],{icon:greenIcon}).addTo(map).bindPopup("<b> วัดนรนาถสุนทริการาม<br>แขวงวัดสามพระยา เขตพระนคร กรุงเทพมหานคร<br> <b>").openPopup();
+L.marker ([13.77305,100.50451],{icon:greenIcon}).addTo(map).bindPopup("<b> หอสมุดแห่งชาติ <b> <br>แขวงวชิรพยาบาล เขตดุสิต กรุงเทพมหานคร<br>").openPopup();
+</script>
+</body>
+</html>
